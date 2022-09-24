@@ -1,24 +1,56 @@
-.TodoSearch{
+#formTodoSearch{
+    margin: 20px 20px;
+    display:flex;
+    justify-content: center;
+    padding: 2px;
     background-color: #FFFFFF;
+    border: 1px solid #000000;
     border-radius: 5px;
-    border: 2px solid #000000;
-    margin: 0 24px;
-    height: 64px;
-    width: calc(100% - 62px);
-    font-size: 24px;
-    text-align: center;
-    font-family: 'Montserrat serif';/*serif*/
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;/*serif*/
     font-weight: 500;
-    color: #2e2e83;
+    color: #2c165e;
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25)
 }
 
+/* form>*:first-child{
+    align-self: flex-start;
+} */
+
+.TodoSearch{
+    width:90%;
+    color:#182c1a;
+    text-align: center;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    background: transparent;
+    padding: 8px 8px;
+    border: 1px solid transparent;
+    border-radius: inherit;
+}
+
 .TodoSearch::placeholder{
-    color: #7070b6;
-    font-family: 'Montserrat serif';
-    font-weight: 500;
+    color: #4f6851;
+    font-family: inherit;
+    font-weight: inherit;
 }
 
 .TodoSearch:focus{
-    outline-color: #201242;
+    outline-color: #4f6851;
+}
+
+.Icon-search{
+    padding: 0;
+    margin: 0;
+    font-size: 2.0rem;
+    color: inherit;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.Icon-search:hover{
+    opacity: 1;
 }

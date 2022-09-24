@@ -1,0 +1,29 @@
+.TodoCabecera{
+  width: 90%;
+  margin: 2px 5px;
+  padding: 2px 5px;
+  font-size: 1.5rem;
+}
+
+.CabeceraMain{
+  display:flex;
+  justify-content: space-between;
+}
+
+.firstHead{
+  margin:10px;
+  display:flex;
+  align-items: center;
+}
+.secondHead{
+  margin:10px;
+  text-align: right;
+}
+
+/*Desktop and Tablet view*/
+@media only screen and (min-width:800px){
+  .TodoCabecera{
+    font-size: 2.5rem;
+  }
+}
+

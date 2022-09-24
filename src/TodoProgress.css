@@ -1,0 +1,8 @@
+.TodoProgress{
+  font-size: 80%;
+}
+
+.TodoProgress progress{
+  height: 25px;
+  width:100%;
+}
