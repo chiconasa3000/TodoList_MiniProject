@@ -1,9 +1,9 @@
 import React from 'react'
 import './TodoCreacion.css';
-import {CreateTodoButton} from './CreateTodoButton';
-import todoCreacionImgMobile from './images/glenn-carstens-peters-RLw-UC03Gwc-unsplash_large.jpg';
-import todoCreacionImgMedium from './images/glenn-carstens-peters-RLw-UC03Gwc-unsplash_medium.jpg';
-import todoCreacionImgLarge from './images/glenn-carstens-peters-RLw-UC03Gwc-unsplash_small.jpg';
+import {CreateTodoButton} from '../CreateTodoButton';
+import todoCreacionImgMobile from '../images/glenn-carstens-peters-RLw-UC03Gwc-unsplash_large.jpg';
+import todoCreacionImgMedium from '../images/glenn-carstens-peters-RLw-UC03Gwc-unsplash_medium.jpg';
+import todoCreacionImgLarge from '../images/glenn-carstens-peters-RLw-UC03Gwc-unsplash_small.jpg';
 
 function TodoCreacion(){
   return(

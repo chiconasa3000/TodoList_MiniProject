@@ -41,14 +41,12 @@
 }
 
 .Icon-search{
-    padding: 0;
+    padding: 5px;
     margin: 0;
     font-size: 2.0rem;
     color: inherit;
     border: 1px solid transparent;
     border-radius: inherit;
-    cursor: pointer;
-    opacity: 0.7;
 }
 
 .Icon-search:hover{

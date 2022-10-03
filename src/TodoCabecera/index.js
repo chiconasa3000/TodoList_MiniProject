@@ -1,10 +1,10 @@
 import React from 'react';
 import './TodoCabecera.css';
-import {TodoCounter} from './TodoCounter';
-import {TodoSearch} from './TodoSearch';
-import {TodoCategory} from './TodoCategory';
-import {TodoMarkDate} from './TodoMarkDate';
-import {TodoProgress} from './TodoProgress';
+import {TodoCounter} from '../TodoCounter';
+import {TodoSearch} from '../TodoSearch';
+import {TodoCategory} from '../TodoCategory';
+import {TodoMarkDate} from '../TodoMarkDate';
+import {TodoProgress} from '../TodoProgress';
 
 function TodoCabecera(props){
   return(
@@ -22,7 +22,10 @@ function TodoCabecera(props){
             />
           </section>
         </section>
-        <TodoProgress/>
+        <TodoProgress
+          total = {props.total}
+          completed = {props.completed}
+        />
         <TodoSearch
           searchValue = {props.searchValue}
           setSearchValue = {props.setSearchValue}

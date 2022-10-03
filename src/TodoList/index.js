@@ -1,9 +1,7 @@
 import React from 'react';
 import './TodoList.css';
-import {TodoSearch} from './TodoSearch';
-import {TodoCounter} from './TodoCounter';
-import { TodoCabecera } from './TodoCabecera';
-import { CreateTodoButton } from './CreateTodoButton';
+import { TodoCabecera } from '../TodoCabecera';
+import { CreateTodoButton } from '../CreateTodoButton';
 
 function TodoList(props){
     return(

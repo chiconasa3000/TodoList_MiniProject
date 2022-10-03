@@ -13,9 +13,13 @@
 .TodoItem:hover{
     border:1px black solid;
 }
-
+.TodoItem p:hover{
+    font-weight: bold;
+}
 .TodoItem-p{
-    margin: 15px 10px 15px 10px;
+    margin: 0;
+    margin-left: 35px;
+    padding: 15px 40px 15px 10px;
     width: 70%;
     font-size: 1.5rem;
     font-weight: 500;
