@@ -17,18 +17,18 @@ function TodoCabecera(props){
           <section className='secondHead'>
             <TodoMarkDate/>
             <TodoCounter 
-              total = {props.total}
-              completed = {props.completed}
+              /*total = {props.total}
+              completed = {props.completed}*/
             />
           </section>
         </section>
         <TodoProgress
-          total = {props.total}
-          completed = {props.completed}
+          /*total = {props.total}
+          completed = {props.completed}*/
         />
         <TodoSearch
-          searchValue = {props.searchValue}
-          setSearchValue = {props.setSearchValue}
+          /*searchValue = {props.searchValue}
+          setSearchValue = {props.setSearchValue}*/
         />
       </div>
     </React.Fragment>

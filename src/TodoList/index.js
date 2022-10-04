@@ -8,10 +8,10 @@ function TodoList(props){
         <React.Fragment>
             <section className='TodoList'>
                 <TodoCabecera 
-                    total = {props.total}
+                    /*total = {props.total}
                     completed = {props.completed}
                     searchValue = {props.searchValue}
-                    setSearchValue = {props.setSearchValue}
+                    setSearchValue = {props.setSearchValue}*/
                     />
                 <ul>
                     {props.children}

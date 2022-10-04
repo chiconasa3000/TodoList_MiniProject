@@ -1,8 +1,12 @@
 import React from 'react'
+import { TodoContext } from '../TodoContext';
 import './TodoProgress.css'
 
-function TodoProgress({ total, completed }){
-  let currentProgress = (completed/total*100).toFixed(1);
+function TodoProgress(){
+  const { totalTodos, completedTodos } = React.useContext(TodoContext);
+  let currentProgress = 0;
+  if(totalTodos !== 0)
+    currentProgress = (completedTodos/totalTodos*100).toFixed(1);
   return(
     <section className='TodoProgress'>
       <label htmlFor="bar-TodoProgress">Progress completed: {currentProgress}%</label>
