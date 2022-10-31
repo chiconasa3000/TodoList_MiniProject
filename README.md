@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+## ToDo Shopping List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![todo list mobile](public/todomobile.png)
+
 
 ## Available Scripts
 
