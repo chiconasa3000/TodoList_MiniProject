@@ -20,7 +20,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 100%;
     border:none;
 
     background-color: #354f52;
@@ -35,10 +35,11 @@
     transform: rotate(0);
     transition: .3s ease;
     margin: 8px;
+    z-index: 1;
 }
 
 .CreateTodoButton:hover{
     border: 1px black solid;
-    transform: rotate(180deg);
+    transform: rotate(135deg);
 }
 

@@ -1,16 +1,18 @@
 import React from 'react';
 import './CreateTodoButton.css';
 
-function CreateTodoButton(props) {
+function CreateTodoButton({setOpenModal, openModal}) {
     /*Si pasas parametros doble arrow function*/
-    const onClickButton = (msg) => {
-        alert(msg);
+    const onClickButton = () => {
+        //recibe una arrow function 
+        //con argument prevState y retorna el argumento negado
+        setOpenModal(prevState => !prevState);
     };
 
     return (
         <button 
             className='CreateTodoButton'
-            onClick={() => onClickButton("Creacion de Tarea...")}
+            onClick={onClickButton}
         >
             <span>+</span>
         </button>
