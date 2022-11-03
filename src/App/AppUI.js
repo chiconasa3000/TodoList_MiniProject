@@ -5,6 +5,7 @@ import { TodoItem } from '../TodoItem';
 import {TodoContext} from '../TodoContext';
 import {Modal} from '../Modal';
 import {TodoForm} from '../TodoForm';
+import {TodoSkeleton} from '../TodoSkeleton';
 
 function AppUI(){
   const {
@@ -21,7 +22,7 @@ function AppUI(){
       <TodoCreacion/>
       <TodoList>
         {error && <p>Hubo un error calma reportalo y lo solucionaremos</p>}
-        {loading && <p>Estamos Cargando no desesperes</p>}
+        {loading && <TodoSkeleton/>}
         {(!loading && !searchedTodos.length) && <p>Crea tu primer TODO!</p>}
         {searchedTodos.map(todo =>(
           <TodoItem 
