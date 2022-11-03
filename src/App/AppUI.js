@@ -5,7 +5,10 @@ import { TodoItem } from '../TodoItem';
 import {TodoContext} from '../TodoContext';
 import {Modal} from '../Modal';
 import {TodoForm} from '../TodoForm';
-import {TodoSkeleton} from '../TodoSkeleton';
+
+import {TodosError} from '../TodosError';
+import {TodosLoading} from '../TodosLoading';
+import {EmptyTodos} from '../EmptyTodos';
 
 function AppUI(){
   const {
@@ -21,9 +24,9 @@ function AppUI(){
     <React.Fragment>
       <TodoCreacion/>
       <TodoList>
-        {error && <p>Hubo un error calma reportalo y lo solucionaremos</p>}
-        {loading && <TodoSkeleton/>}
-        {(!loading && !searchedTodos.length) && <p>Crea tu primer TODO!</p>}
+        {error && <TodosError error={error}/>}
+        {loading && <TodosLoading/>}
+        {(!loading && !searchedTodos.length) && <EmptyTodos/>}
         {searchedTodos.map(todo =>(
           <TodoItem 
             key={todo.text}
