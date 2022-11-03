@@ -7,11 +7,16 @@ function TodoSearch(){
     const {searchValue,setSearchValue} = React.useContext(TodoContext);
 
     const onSearchValueChange = (event) => {
+        event.preventDefault();
         setSearchValue(event.target.value);
     };
 
+    const onSubmit=(event)=>{
+        event.preventDefault();
+    }
+
     return(
-        <form id="formTodoSearch">
+        <form id="formTodoSearch" onSubmit={onSubmit}>
             {/*<label for="fsearch">Busqueda de Tarea: </label>*/}
             <input 
                 type="search" 
@@ -22,7 +27,7 @@ function TodoSearch(){
                 value={searchValue}
                 onChange={onSearchValueChange}
             />
-            <span className={`Icon-search Icon-search--active}`}>🔍</span>
+            {/*<span className={`Icon-search Icon-search--active}`}>🔍</span>*/}
         </form>
     );
 }

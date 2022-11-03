@@ -2,9 +2,10 @@ import React from 'react'
 import './TodoMarkDate.css'
 
 function TodoMarkDate(){
+  const today = new Date();
   return(
     <section className='TodoMarkDate'>
-      <p>Thursday, September 22</p>
+      <p>{today.toDateString()}</p>
     </section>
   );
 }

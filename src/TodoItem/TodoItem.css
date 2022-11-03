@@ -10,12 +10,6 @@
     box-shadow: 0px 5px 50px rgba(32,35,41,0.15);
 }
 
-.TodoItem:hover{
-    border:1px black solid;
-}
-.TodoItem p:hover{
-    font-weight: bold;
-}
 .TodoItem-p{
     margin: 0;
     margin-left: 35px;
@@ -30,45 +24,6 @@
     text-decoration: line-through;
 }
 
-.Icon{
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    width: 30px;
-    font-size: 1.6rem;
-    font-weight: bold;
-    border-radius: 50%;
-    background-color: rgb(203, 203, 230);
-    transform: scale(1);
-    transition: .3s ease;
-}
-.Icon:hover{
-    height: 32px;
-    width: 32px;
-    border: 1px black solid;
-    font-weight: 800;
-    transform: scale(1.1);
-}
-
-.Icon-check{
-    position: absolute;
-    left:5px;
-}
-
-.Icon-check--active{
-    color: rgb(203, 203, 230);
-    background-color: #4f6851;
-}
-
-.Icon-delete{
-    position: absolute;
-    top: -10px;
-    right:-15px;
-}
-
-.Icon-delete:hover{
-    border: 1px black solid;
-    color:#bc4749;
+.TodoItem:hover{
+    border: 1px #354f52 dashed;
 }

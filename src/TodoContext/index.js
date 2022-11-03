@@ -61,11 +61,15 @@ function TodoProvider(props){
     
     const addTodo = (text) => {
       const newTodos = [...todos];
-      newTodos.push({
-        completed: false,
-        text: text,
-      });
-      saveTodos(newTodos);
+
+      //verificar si el elemento ya existe
+      if(!todos.some(elem => elem.text === text)){
+        newTodos.push({
+          completed: false,
+          text: text,
+        });
+        saveTodos(newTodos);
+      }
     };
 
     const completeTodo = (text) => {
