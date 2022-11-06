@@ -1,7 +1,7 @@
 import React from 'react';
 import './CreateTodoButton.css';
 
-function CreateTodoButton({setOpenModal, openModal}) {
+function CreateTodoButton({setOpenModal}) {
     /*Si pasas parametros doble arrow function*/
     const onClickButton = () => {
         //recibe una arrow function 

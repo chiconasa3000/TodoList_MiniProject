@@ -1,0 +1,72 @@
+
+
+.TodoDash{
+  background-color: #f3eee9;
+  height: 100vh;
+  width:40%;
+  margin: 10px;
+  display:none;
+}
+
+@media only screen and (min-width:800px){
+  .TodoDash{
+    display:flex;
+    flex-direction: column;
+  }
+}
+
+.cabecera-dash{
+  background-color: #d0d8d9;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+.TodoDash h1{
+  font-size: 2em;
+  margin:0px 15px;
+  
+}
+.todoDashImg{
+  margin:10px 10px;
+}
+.todoDashImg img{
+  width:160px;
+  height: 160px;
+  margin:20px;
+}
+
+.budget-report{
+  margin-top:50px;
+  height:100px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.budget-report label{
+  font-size: 1.4em;
+}
+.budget-report button{
+  margin:10px;
+  padding:16px 18px;
+  border-radius:50%;
+  border: 1px black  solid;
+  background-color: #d0d8d9;
+  transform: rotate(0) scale(0.6);
+  transition: .9s ease;
+}
+
+.budget-report button:hover{
+  transform: rotate(360deg) scale(0.8);
+}
+
+.todobudget-icon{
+  fill:white;
+  height:2.5em;
+  width:2.5em;
+}
+
+

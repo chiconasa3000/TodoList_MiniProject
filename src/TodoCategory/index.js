@@ -4,7 +4,7 @@ import './TodoCategory.css';
 function TodoCategory(){
   return(
     <section className="TodoCategory">
-      <h1>ToDo List</h1>
+      <h1>Shopping List</h1>
     </section>
   );
 }

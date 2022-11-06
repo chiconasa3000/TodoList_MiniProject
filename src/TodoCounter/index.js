@@ -5,7 +5,7 @@ import './TodoCounter.css';
 function TodoCounter(){
     const {totalTodos, completedTodos} = React.useContext(TodoContext);
     return(
-        <h2 className='TodoCounter'>{completedTodos} Tasks left of {totalTodos}</h2>
+        <h2 className='TodoCounter'>{completedTodos} Items left of {totalTodos}</h2>
     );  
 }
 //No usar ya que requeriras asignar un nombre

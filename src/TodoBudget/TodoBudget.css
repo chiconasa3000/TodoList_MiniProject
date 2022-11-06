@@ -1,0 +1,33 @@
+.todobudget{
+  margin-top:20px;
+}
+
+.todobudget-details{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  height: 150px;
+  
+}
+
+.todobudget-detail{
+  font-weight: 500;
+  display:flex;
+  justify-content: space-between;
+  width: 60%;
+  
+}
+
+.todobudget-detail p{
+  margin:5px;
+}
+.todobudget-detail p:nth-child(1){
+  font-weight:500;
+  font-size: 1.5rem;
+}
+.todobudget-detail p:nth-child(2){
+  font-weight:500;
+  font-size: 1.8rem;
+}

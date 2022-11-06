@@ -1,32 +1,45 @@
 import React from 'react';
 import { TodoContext } from '../TodoContext';
 import './TodoForm.css';
+import {TodoQuantity} from '../TodoQuantity';
 
 function TodoForm(){
 
   const [newTodoValue, setNewTodoValue] = React.useState('');
+  const [newCantidadValue, setNewCantidadValue]=React.useState(0);
+  const [newPrecioValue, setNewPrecioValue]=React.useState(0.0);
 
   const {
     addTodo,
-    setOpenModal,
+    setOpenModalForm,
   } = React.useContext(TodoContext);
 
-  const onChange = (event) => {
+  const onChangeProducto = (event) => {
     setNewTodoValue(event.target.value);
+  };
+
+  const onChangeCantidad = (event) => {
+    setNewCantidadValue(event.target.value);
+  };
+
+  const onChangePrecio = (event) => {
+    setNewPrecioValue(event.target.value);
   };
 
   const onCancel = () => {
     //cerrar modal sin escribir nada
-    setOpenModal(false);
+    setOpenModalForm(false);
   };
 
   const onSubmit = (event) => {
     //recargar la pagina (avoid)
     //evitar la recarga de pagina del propio evento
     event.preventDefault();
-    addTodo(newTodoValue);
+
+    addTodo(newTodoValue,newCantidadValue,newPrecioValue);
+    
     //cerrar con algo escrito en el modal
-    setOpenModal(false);
+    setOpenModalForm(false);
   };
 
   return(
@@ -34,9 +47,28 @@ function TodoForm(){
       <label>Escribe tu todo</label>
       <textarea
         value={newTodoValue}
-        onChange={onChange}
-        placeholder="Cortar la cebolla para el almuerzo"
+        onChange={onChangeProducto}
+        placeholder="Comprar cebolla para el almuerzo"
       />
+
+      <TodoQuantity 
+        itemCantValue={newCantidadValue} 
+        setItemCantValue={setNewCantidadValue} 
+        onChange={onChangeCantidad} 
+        label="Cantidad" 
+        esEntero={true} 
+        initialVal="0"
+      />
+
+      <TodoQuantity 
+        itemCantValue={newPrecioValue} 
+        setItemCantValue={setNewPrecioValue} 
+        onChange={onChangePrecio} 
+        label="Precio" 
+        esEntero={false} 
+        initialVal="0.0"
+      />
+
       <div className='TodoForm-buttonContainer'>
         <button 
           type="button"

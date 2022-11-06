@@ -1,0 +1,40 @@
+input[type=number]{
+  font-size: 1.8em;
+  text-align: center;
+  margin: 20px 0;
+  height: 40px;
+  width: 100px;
+  border:1px solid black;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.container-cant{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-cant label{
+  font-weight: bold;
+  font-size: 1.6em;
+  width:120px;
+  margin:0 10px;
+}
+.container-cant--buttons{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30px;
+}
+
+.container-cant--buttons > span{
+  font-size: 2.2em;
+  font-weight: 600;
+  height: 25px;
+}

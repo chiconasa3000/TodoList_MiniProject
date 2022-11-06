@@ -4,8 +4,10 @@ import { TodoCabecera } from '../TodoCabecera';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { TodoContext } from '../TodoContext';
 
+
 function TodoList(props){
-    const {setOpenModal, openModal} = React.useContext(TodoContext);
+    const {setOpenModalForm} = React.useContext(TodoContext);
+
     return(
         <React.Fragment>
             <section className='TodoList'>
@@ -14,8 +16,7 @@ function TodoList(props){
                     {props.children}
                 </ul>
                 <CreateTodoButton
-                    setOpenModal={setOpenModal}
-                    openModal={openModal}
+                    setOpenModal={setOpenModalForm}
                 />
             </section>
         </React.Fragment>

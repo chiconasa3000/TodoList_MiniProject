@@ -1,5 +1,6 @@
 /*Mobile view*/
 .TodoList{
+    margin:10px;
     background-color: #efefef;
     height: 100%;
     width:100%;
@@ -8,6 +9,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .TodoList ul{
     overflow-y: scroll;
     height: 40%;
@@ -17,20 +19,21 @@
     list-style: none;
 }
 
+
 /*Desktop and Tablet view*/
 @media only screen and (min-width:800px){
     .TodoList{
         width:50%;
     }
 
-    .TodoList .CreateTodoButton{
-        display: none;
+    .todolist-buttondash{
+        display:none;
     }
 }
 
-@media only screen and (min-height:900px){
+@media only screen and (min-height:800px){
     .TodoList ul{
         height:60%;
-    }
+    }    
     
 }

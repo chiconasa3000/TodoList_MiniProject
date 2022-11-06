@@ -23,7 +23,7 @@ function TodoSearch(){
                 id="fsearch" 
                 className="TodoSearch"  
                 name="fsearch" 
-                placeholder="Search ToDo"
+                placeholder="Search Product"
                 value={searchValue}
                 onChange={onSearchValueChange}
             />

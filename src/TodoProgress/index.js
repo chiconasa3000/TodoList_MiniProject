@@ -9,7 +9,7 @@ function TodoProgress(){
     currentProgress = (completedTodos/totalTodos*100).toFixed(1);
   return(
     <section className='TodoProgress'>
-      <label htmlFor="bar-TodoProgress">Progress completed: {currentProgress}%</label>
+      <label htmlFor="bar-TodoProgress">Progress: {currentProgress}%</label>
       <progress id='bar-TodoProgress' value={currentProgress} max='100'></progress>
     </section>
   );

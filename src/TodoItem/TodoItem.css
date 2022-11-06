@@ -27,3 +27,26 @@
 .TodoItem:hover{
     border: 1px #354f52 dashed;
 }
+
+.item-details{
+    display:flex;
+}
+
+.item-detail{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    width:40px;
+    margin:10px;
+}
+.item-detail p{
+    margin: 0px;
+}
+.item-detail p:nth-child(1){
+    font-weight: bold;
+}
+.item-detail p:nth-child(2){
+    font-weight: 500;
+    font-size: 1.4em;
+}

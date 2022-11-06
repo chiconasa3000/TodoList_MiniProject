@@ -2,28 +2,6 @@ import React from 'react'
 import {useLocalStorage} from './useLocalStorage.js';
 const TodoContext = React.createContext();
 
-const defaultTodos = [
-  {text: 'Cut potatoes Cut potatoes Cut potatoes Cut potatoes Cut potatoes Cut potatoes Cut potatoes', completed:false},
-  {text: 'Crying with Llorona', completed:true},
-  {text: 'Crying cutting onions', completed:false},
-  {text: 'Make the dinner', completed:true},
-  {text: 'Take out the garbage', completed:true},
-  {text: 'Cut 1 tomatoes', completed:true},
-  {text: 'Cut 2 tomatoes', completed:false},
-  {text: 'Cut 3 tomatoes', completed:true},
-  {text: 'Cut 4 tomatoes', completed:false},
-  {text: 'Cut 5 tomatoes', completed:false},
-  {text: 'Cut 6 tomatoes', completed:true},
-  {text: 'Cut 7 tomatoes', completed:true},
-  {text: 'Cut 8 tomatoes', completed:true},
-  {text: 'Cut 9 tomatoes', completed:true},
-  {text: 'Cut 10 tomatoes', completed:true},
-  {text: 'Cut 11 tomatoes', completed:true},
-  {text: 'Cut 12 tomatoes', completed:true},
-  {text: 'Cut 13 tomatoes', completed:true},
-  {text: 'Cut 14 tomatoes', completed:true}
-];
-
 function TodoProvider(props){
     //Estado del arreglo de elemento
     const {
@@ -32,10 +10,17 @@ function TodoProvider(props){
       loading,
       error,
     } = useLocalStorage('TODOS_V2',[]);
-  
+    //Budget compartido con dash y con report
+    const [newBudgetValue,setNewBudgetValue] = React.useState(500.0);
     //Estado del termino de búsqueda
     const [searchValue, setSearchValue] = React.useState('');
-    const [openModal, setOpenModal] = React.useState(false);
+    const [openModalForm, setOpenModalForm] = React.useState(false);
+    const [openModalReport, setOpenModalReport] = React.useState(false);
+
+    //Estado de Expense o Gastos
+    const listTodosCompleted =  todos.filter(todo=> todo.completed);
+    const totalExpenses = listTodosCompleted.reduce((pTodo,cTodo) => pTodo + parseFloat(cTodo.price) * parseFloat(cTodo.cant),0.0);
+    
 
     /*** Obteniendo mas propiedades o data del valor-estado ***/
     //Cantidad de TODOs completados
@@ -59,16 +44,20 @@ function TodoProvider(props){
       });
     }
     
-    const addTodo = (text) => {
-      const newTodos = [...todos];
+    const addTodo = (text,cant, price) => {
+      if(text !== ""){
+        const newTodos = [...todos];
 
-      //verificar si el elemento ya existe
-      if(!todos.some(elem => elem.text === text)){
-        newTodos.push({
-          completed: false,
-          text: text,
-        });
-        saveTodos(newTodos);
+        //verificar si el elemento ya existe
+        if(!todos.some(elem => elem.text === text)){
+          newTodos.push({
+            completed: false,
+            text: text,
+            cant: cant,
+            price: price,
+          });
+          saveTodos(newTodos);
+        }
       }
     };
 
@@ -92,6 +81,7 @@ function TodoProvider(props){
       error,
       totalTodos,
       completedTodos,
+      totalExpenses,
 
       searchValue,
       setSearchValue,
@@ -101,8 +91,14 @@ function TodoProvider(props){
       deleteTodo,
       addTodo,
 
-      openModal,
-      setOpenModal,
+      openModalForm,
+      setOpenModalForm,
+
+      openModalReport,
+      setOpenModalReport,
+
+      newBudgetValue,
+      setNewBudgetValue,
     }}>
       {props.children}
     </TodoContext.Provider>
