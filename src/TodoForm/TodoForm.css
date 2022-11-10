@@ -15,9 +15,9 @@
 .formCreateTodo label{
   text-align: center;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   color: #1E1E1F;
-  margin-bottom: 10px;
+  margin: 5px 0px;
 }
 
 .formCreateTodo textarea{
@@ -33,15 +33,30 @@
   width:calc(100% - 25px);
 }
 
-.formCreateTodo textarea::placeholder{
+.formCreateTodo textarea::placeholder, input[type=text]::placeholder{
   color: #A5A5A5;
   font-family: 'Montserrat';
   font-weight: 400;
 }
 
-.formCreateTodo textarea:focus{
+.formCreateTodo textarea:focus, input[type=text]:focus{
   outline-color: #3f6e5f;
 }
+
+
+.formCreateTodo input[type=text]{
+  background-color: #F9FBFC;
+  border: 2px solid #202329;
+  border-radius: 2px;
+  box-shadow: 0px 5px 50px rgba(32,35,41,0.25);
+  color: #1E1E1F;
+  font-size: 14px;
+  text-align: center;
+  padding: 12px;
+  height: auto;
+  width:calc(100% - 25px);
+}
+
 
 .TodoForm-buttonContainer{
   margin-top: 14px;

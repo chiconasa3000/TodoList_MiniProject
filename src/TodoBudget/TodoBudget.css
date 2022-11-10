@@ -1,6 +1,3 @@
-.todobudget{
-  margin-top:20px;
-}
 
 .todobudget-details{
   display:flex;
@@ -20,7 +17,7 @@
   
 }
 
-.todobudget-detail p{
+.todobudget-detail p{ 
   margin:5px;
 }
 .todobudget-detail p:nth-child(1){
@@ -28,6 +25,35 @@
   font-size: 1.5rem;
 }
 .todobudget-detail p:nth-child(2){
-  font-weight:500;
+  font-weight:600;
   font-size: 1.8rem;
+}
+
+.TodoBudget-buttonContainer{
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.TodoBudget-button{
+  cursor: pointer;
+  display: flex;
+  width:40%;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color:white;
+  font-weight: 400;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  font-family: 'Montserrat';
+}
+
+.TodoBudget-button--cancel{
+  text-align: center;
+  background: #295c59;
+  box-shadow: 0px 5px 25px rgba(97,218, 250, 0.5);
 }

@@ -1,0 +1,25 @@
+/*Mobile view*/
+.TodoSection{
+  margin:10px;
+  background-color: #efefef;
+  width:100%;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+  margin:0;
+}
+
+.TodoSection ul{
+  display:flex;
+  height: auto;
+  padding: 10px 20px;
+  margin:0;
+  list-style: none;
+}
+
+@media only screen and (min-height:800px){
+  .TodoSection ul{
+      height:60%;
+  }    
+  
+}

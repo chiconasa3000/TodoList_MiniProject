@@ -4,7 +4,7 @@ import {TodoBudget} from '../TodoBudget';
 function TodoReport(){
   return(
     <div className="todoreport">
-      <TodoBudget/>
+      <TodoBudget esModal={true}/>
     </div>
   );
 };

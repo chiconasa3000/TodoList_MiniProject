@@ -1,0 +1,20 @@
+.todoDetail{
+  margin:10px;
+  background-color: #efefef;
+  height: 100%;
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*Desktop and Tablet view*/
+@media only screen and (min-width:800px){
+  .todoDetail{
+    width:60%;
+  }
+  .todolist-buttondash{
+      display:none;
+  }
+}

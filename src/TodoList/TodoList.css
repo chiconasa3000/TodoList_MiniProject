@@ -1,39 +1,17 @@
 /*Mobile view*/
 .TodoList{
-    margin:10px;
     background-color: #efefef;
-    height: 100%;
     width:100%;
-    display:flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow-y: scroll;
 }
 
 .TodoList ul{
-    overflow-y: scroll;
-    height: 40%;
-    width:80%;
+    display:flex;
+    flex-direction: column;
+    height: 100%;
     padding: 10px 50px;
-    margin: 5px 0px;
+    margin: 0;
     list-style: none;
-}
-
-
-/*Desktop and Tablet view*/
-@media only screen and (min-width:800px){
-    .TodoList{
-        width:50%;
-    }
-
-    .todolist-buttondash{
-        display:none;
-    }
-}
-
-@media only screen and (min-height:800px){
-    .TodoList ul{
-        height:60%;
-    }    
-    
 }

@@ -5,7 +5,8 @@ import {TodoQuantity} from '../TodoQuantity';
 
 function TodoForm(){
 
-  const [newTodoValue, setNewTodoValue] = React.useState('');
+  const [newProductDescription, setProductDescription] = React.useState('');
+  const [newCategory, setCategory] = React.useState('');
   const [newCantidadValue, setNewCantidadValue]=React.useState(0);
   const [newPrecioValue, setNewPrecioValue]=React.useState(0.0);
 
@@ -15,9 +16,13 @@ function TodoForm(){
   } = React.useContext(TodoContext);
 
   const onChangeProducto = (event) => {
-    setNewTodoValue(event.target.value);
+    setProductDescription(event.target.value);
   };
-
+  
+  const onChangeCategory = (event) => {
+    setCategory(event.target.value);
+  };
+  
   const onChangeCantidad = (event) => {
     setNewCantidadValue(event.target.value);
   };
@@ -36,7 +41,7 @@ function TodoForm(){
     //evitar la recarga de pagina del propio evento
     event.preventDefault();
 
-    addTodo(newTodoValue,newCantidadValue,newPrecioValue);
+    addTodo(newCategory,newProductDescription,newCantidadValue,newPrecioValue);
     
     //cerrar con algo escrito en el modal
     setOpenModalForm(false);
@@ -44,12 +49,21 @@ function TodoForm(){
 
   return(
     <form className="formCreateTodo" onSubmit={onSubmit}>
-      <label>Escribe tu todo</label>
-      <textarea
-        value={newTodoValue}
-        onChange={onChangeProducto}
-        placeholder="Comprar cebolla para el almuerzo"
+
+      <label htmlFor='categoryname'>Asigna o crea una categoria</label>
+      <input id="categoryname" name="categoryname" type="text"
+        value={newCategory}
+        onChange={onChangeCategory}
+        placeholder="Vegetables"
       />
+
+      <label htmlFor='prodDes'>Descripcion de Producto</label>
+      <textarea id="prodDes"
+        value={newProductDescription}
+        onChange={onChangeProducto}
+        placeholder="Tomates"
+      />
+      
 
       <TodoQuantity 
         itemCantValue={newCantidadValue} 

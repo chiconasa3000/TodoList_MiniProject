@@ -20,7 +20,7 @@ function TodoDash(props){
               <img src={todoDashImgMobile} alt="logo"/>
           </picture>
         </div>
-        <TodoBudget/>
+        <TodoBudget esModal={false}/>
         <div className='budget-report'>
           <label htmlFor='todobudget-plot--button'>View Report</label>
           <button id="todobudget-plot--button"><FiPieChart className="todobudget-icon"/></button>

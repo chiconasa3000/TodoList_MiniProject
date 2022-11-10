@@ -1,0 +1,11 @@
+.todosectionitem{
+  cursor: pointer;
+  padding: 10px;
+  border-right: 1px black solid;
+  font-size:1.2em;
+}
+
+.todosectionitem:hover{
+  color:white;
+  background-color: #354f52;
+}
