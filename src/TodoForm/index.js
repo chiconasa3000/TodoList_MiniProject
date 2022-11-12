@@ -42,11 +42,9 @@ function TodoForm(props){
     //evitar la recarga de pagina del propio evento
     event.preventDefault();
     if(productDetails.esEdit !== true){
-      console.log("addtodo");
       addTodo(newCategory,newProductDescription,newCantidadValue,newPrecioValue);
     }else{
-      console.log("edittodo");
-      editTodo(newCategory,newProductDescription,newCantidadValue,newPrecioValue);
+      editTodo(props.productDetails.category,newCategory,props.productDetails.description,newProductDescription,newCantidadValue,newPrecioValue);
     }
     
     //cerrar con algo escrito en el modal

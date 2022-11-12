@@ -12,7 +12,7 @@ function TodoQuantity(props){
         id="itemCantValue"
         type="number" 
         min={props.initialVal}
-        step="0.1"
+        step="0.01"
         value={props.itemCantValue} 
         onChange={props.onChange}  
       />

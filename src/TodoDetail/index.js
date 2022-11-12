@@ -61,7 +61,7 @@ function TodoDetail(){
                   onComplete={()=>completeTodo(todo.text)}
                 />
               </div>
-              <div className='containerGen--item'>
+              
                 <TodoItem 
                   key={todo.text}
                   text={todo.text}
@@ -72,7 +72,7 @@ function TodoDetail(){
                   onDelete={()=>deleteTodo(todo.text)}
                   onEdit={()=>onEditDetail(section, todo.text, todo.cant, todo.price)}
                 />
-              </div>
+              
             </div>            
           ))}
         </TodoList>

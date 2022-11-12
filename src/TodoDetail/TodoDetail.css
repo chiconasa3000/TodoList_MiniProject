@@ -12,6 +12,7 @@
 .itemcontainer{
   display:flex;
   align-items: center;
+  justify-content: center;
 }
 .containerGen--icon{
   border: 1px gray dotted;
@@ -25,9 +26,9 @@
   justify-content: center;
 }
 
-.containerGen--item{
-  width:100%;
-}
+/*.containerGen--item{
+  width:80%;
+}*/
 /*Desktop and Tablet view*/
 @media only screen and (min-width:800px){
   .todoDetail{

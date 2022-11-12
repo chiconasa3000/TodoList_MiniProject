@@ -208,21 +208,13 @@ function TodoProvider(props){
       }
     };
 
-    const editTodo = (category, text,cant, price) => {
+    const editTodo = (oldcategory, category, oldtext, text, cant, price) => {
       category = category.toLowerCase();
       text = text.toLowerCase();
-      
       //ToDo comprobar el resto de elementos
       if(text !== ""){
         const newTodos = [...todos];
-
-        //verificar la categoria o seccion si ya existe asigna en esa seccion
-        //si no existe crear la seccion el arreglo y pushea el producto
-        let indCat = todos.findIndex(cat=>{
-          //reducir la busqueda ya con la seccion actual en que esta
-          return Object.keys(cat)[0].toLowerCase() === category;
-        });
-
+        //construimos el nuevo producto
         let nuevoProd =  {
           completed: false,
           text: text,
@@ -230,20 +222,35 @@ function TodoProvider(props){
           price: price,
         };
 
-        //buscar que indice de objeto es actualmente
-        let indProd = newTodos[indCat][category].findIndex(prod => {
-          return prod.text === text;
+        //recuperar el indice de  oldcategory
+        let indOldCat = todos.findIndex(cat=>{
+          return Object.keys(cat)[0].toLowerCase() === oldcategory;
+        });
+        let indCat = todos.findIndex(cat=>{
+          return Object.keys(cat)[0].toLowerCase() === category;
         });
 
-        if(indCat!==-1){
-          //Cuando existe la categoria
-          newTodos[indCat][category][indProd] = nuevoProd;
-        }else{
-          //Entonces es un nuevo producto
+        if(oldcategory !== category){
+          //(eliminar el producto actual de oldcategory)
+          let indOldProd = newTodos[indOldCat][oldcategory].findIndex(prod => {
+            return prod.text === oldtext;
+          });
+          newTodos[indOldCat][oldcategory].splice(indOldProd,1);
+
+          //ingresar el producto en la nueva categoria
           newTodos[indCat][category].push(nuevoProd);
+          
+        }else{
+          //recuperar que indice de producto con el antiguo texto  (update)
+          let indProd = newTodos[indCat][category].findIndex(prod => {
+            return prod.text === oldtext;
+          });
+          if(indProd!==-1){
+            //Cuando existe el nombre del producto
+            newTodos[indCat][category][indProd] = nuevoProd;
+          }
         }
-        saveTodos(newTodos);
-        
+        saveTodos(newTodos);        
       }
     };
 

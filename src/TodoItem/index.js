@@ -25,7 +25,7 @@ function TodoItem(props) {
                         <p className="item-cant--value">{`${props.cant} K`}</p>
                     </div>
                     <div className="item-detail">
-                        <p className="item-precio-label">Price</p>
+                        <p className="item-precio-label">U.Price</p>
                         <p className="item-precio-value">{`$ ${props.price}`}</p>
                     </div>
                 </div>
