@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/TodoList_MiniProject/static/css/main.4b7d2df7.css",
+    "main.js": "/TodoList_MiniProject/static/js/main.fb997865.js",
+    "static/media/main_picture_shopping.png": "/TodoList_MiniProject/static/media/main_picture_shopping.683378019fdfe514b6b7.png",
+    "index.html": "/TodoList_MiniProject/index.html",
+    "main.4b7d2df7.css.map": "/TodoList_MiniProject/static/css/main.4b7d2df7.css.map",
+    "main.fb997865.js.map": "/TodoList_MiniProject/static/js/main.fb997865.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b7d2df7.css",
+    "static/js/main.fb997865.js"
+  ]
+}
