@@ -1,82 +1,6 @@
 import React from 'react'
 import {useLocalStorage} from './useLocalStorage.js';
 const TodoContext = React.createContext();
-let defaultarray = 
-  [
-      {"verduras": 
-          [
-              {
-                  "completed": false,
-                  "text": "espinaca",
-                  "cant": 2,
-                  "price": "1.4"
-              },
-              {
-                  "completed": false,
-                  "text": "tomate",
-                  "cant": 3,
-                  "price": "4.4"
-              },
-              {
-                  "completed": true,
-                  "text": "beterraga",
-                  "cant": 1,
-                  "price": "22.1"
-              },
-              {
-                  "completed": true,
-                  "text": "apio",
-                  "cant": 3,
-                  "price": "18.1"
-              },
-              {
-                "completed": true,
-                "text": "navo",
-                "cant": 5,
-                "price": "5.12"
-              },
-              {
-                "completed": true,
-                "text": "zapallo",
-                "cant": 2,
-                "price": "2.12"
-              },
-          ]
-      },
-      {"carnes":
-          [
-              {
-                  "completed": true,
-                  "text": "carne res",
-                  "cant": 3,
-                  "price": "2.1"
-              },
-              {
-                  "completed": false,
-                  "text": "carne cerdo",
-                  "cant": 2,
-                  "price": "8.2"
-              },
-              {
-                  "completed": true,
-                  "text": "carne de cordero",
-                  "cant": 2,
-                  "price": "21.1"
-              },
-          ]
-      },
-
-      {"lacteos":
-          [
-              {
-                  "completed": true,
-                  "text": "yogurt",
-                  "cant": 2,
-                  "price": "3.1"
-              },
-          ]
-      },
-  ];
 
 function TodoProvider(props){
     //Estado del arreglo de elemento
@@ -108,8 +32,6 @@ function TodoProvider(props){
 
     //Estado de Expense o Gastos
     let listProdCompletado = []
-    // console.log("todos");
-    // console.log(todos);
     
     todos.forEach(cat => {
       let objetosPorCategoria = Object.values(cat);
@@ -152,9 +74,6 @@ function TodoProvider(props){
       });      
     }
 
-    // console.log("searchedTodos");
-    // console.log(searchedTodos);
-
     //filtrados por categoria
     let searchedTodosCat = [];
     if(searchedTodos !== undefined){
@@ -181,8 +100,9 @@ function TodoProvider(props){
             return;
           }
         });
+
         //Si no existe ningun elemento coincidente
-        if(todoIndex === -1){
+        if(todoIndex === -1 || todoIndex === -2){
           //verificar la categoria o seccion si ya existe asigna en esa seccion
           //si no existe crear la seccion el arreglo y pushea el producto
           let indCat = todos.findIndex(cat=>{
