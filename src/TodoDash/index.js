@@ -6,8 +6,9 @@ import todoDashImgMedium from '../images/glenn-carstens-peters-RLw-UC03Gwc-unspl
 import todoDashImgLarge from '../images/glenn-carstens-peters-RLw-UC03Gwc-unsplash_large.jpg';*/
 import todoDashImgMobile from '../images/main_picture_shopping.png';
 import {FiPieChart} from 'react-icons/fi';
-import {TodoBudget} from '../TodoBudget';
-
+//import {TodoBudget} from '../TodoBudget';
+import { TodoContext } from '../TodoContext';
+import {TodoPlot} from '../TodoPlot';
 function TodoDash(props){
   return(
     <React.Fragment>
@@ -20,11 +21,8 @@ function TodoDash(props){
               <img src={todoDashImgMobile} alt="logo"/>
           </picture>
         </div>
-        <TodoBudget esModal={false}/>
-        <div className='budget-report'>
-          <label htmlFor='todobudget-plot--button'>View Report</label>
-          <button id="todobudget-plot--button"><FiPieChart className="todobudget-icon"/></button>
-        </div>
+        <TodoPlot esModal={false}/>
+        
         
       </div>
     </React.Fragment>

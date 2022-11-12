@@ -28,42 +28,53 @@
   color: #61dafb;
 }
 
-
-.todolist-buttondash{
+.todolist-buttondash, .todobudget-button{
   display:inline;
   margin: 13px;
   border:none;
   position:fixed;
-  top:-10px;
-  left:-10px;
   transform: scale(0.6);
   transition: .3s ease;
 }
+.todolist-buttondash{
+  top:-8px;
+  left:-5px;
+}
 
-.todolist-buttondash:hover{
+.todobudget-button{
+  top:-8px;
+  left:25px;
+}
+
+.todolist-buttondash:hover, .todobudget-button:hover{
   transform: scale(0.8);
 }
 
-.todolist-buttondash--icon{
+.todolist-buttondash--icon, .todobudget-icon{
   width: 2.5em;
   height: 2.5em;
-}
-
-@media only screen and (min-width:800px){
-  .todolist-buttondash{
-    display:none;
-  }
 }
 
 @media only screen and (min-width:400px){
   .todolist-buttondash{
     left:8px;
   }
+  .todobudget-button{
+    left:38px;
+  }
 }
-
 @media only screen and (min-width:500px){
   .todolist-buttondash{
     left:16px;
+  }
+  .todobudget-button{
+    left:46px;
+  }
+}
+
+@media only screen and (min-width:800px){
+  .todolist-buttondash, .todobudget-button{
+    display:none;
   }
 }
 

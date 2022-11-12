@@ -1,4 +1,3 @@
-@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 ## ToDo Shopping List
 

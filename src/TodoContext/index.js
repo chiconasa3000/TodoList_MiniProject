@@ -65,6 +65,17 @@ let defaultarray =
               },
           ]
       },
+
+      {"lacteos":
+          [
+              {
+                  "completed": true,
+                  "text": "yogurt",
+                  "cant": 2,
+                  "price": "3.1"
+              },
+          ]
+      },
   ];
 
 function TodoProvider(props){
@@ -83,6 +94,9 @@ function TodoProvider(props){
     const [searchValue, setSearchValue] = React.useState('');
     const [openModalForm, setOpenModalForm] = React.useState(false);
     const [openModalReport, setOpenModalReport] = React.useState(false);
+    const [openModalPlot, setOpenModalPlot] = React.useState(false);
+    const [productDetails, setProductDetails] = React.useState({esEdit: false, category:"", description:"",quantity:0,uprice:0.0});
+    
 
     //categoria
     const [section, setSection] = React.useState("verduras");
@@ -194,29 +208,74 @@ function TodoProvider(props){
       }
     };
 
+    const editTodo = (category, text,cant, price) => {
+      category = category.toLowerCase();
+      text = text.toLowerCase();
+      
+      //ToDo comprobar el resto de elementos
+      if(text !== ""){
+        const newTodos = [...todos];
+
+        //verificar la categoria o seccion si ya existe asigna en esa seccion
+        //si no existe crear la seccion el arreglo y pushea el producto
+        let indCat = todos.findIndex(cat=>{
+          //reducir la busqueda ya con la seccion actual en que esta
+          return Object.keys(cat)[0].toLowerCase() === category;
+        });
+
+        let nuevoProd =  {
+          completed: false,
+          text: text,
+          cant: cant,
+          price: price,
+        };
+
+        //buscar que indice de objeto es actualmente
+        let indProd = newTodos[indCat][category].findIndex(prod => {
+          return prod.text === text;
+        });
+
+        if(indCat!==-1){
+          //Cuando existe la categoria
+          newTodos[indCat][category][indProd] = nuevoProd;
+        }else{
+          //Entonces es un nuevo producto
+          newTodos[indCat][category].push(nuevoProd);
+        }
+        saveTodos(newTodos);
+        
+      }
+    };
+
     const completeTodo = (text) => {
-      let indCat = searchedTodos.findIndex(cat=>{
+      let indCat = todos.findIndex(cat=>{
         //reducir la busqueda ya con la seccion actual en que esta
         return Object.keys(cat)[0] === section;
       });
       //encontrar el indice del objeto que coincida con el todo.text
-      const todoIndex = searchedTodos[indCat][section].findIndex(todo => todo.text === text);
-      const newTodos = [...searchedTodos];
-      newTodos[indCat][section][todoIndex].completed = (searchedTodos[indCat][section][todoIndex].completed) ? false : true;
+      const todoIndex = todos[indCat][section].findIndex(todo => todo.text === text);
+      const newTodos = [...todos];
+      newTodos[indCat][section][todoIndex].completed = (todos[indCat][section][todoIndex].completed) ? false : true;
       
       saveTodos(newTodos);
     };
   
     const deleteTodo = (text) => {
-      let indCat = searchedTodos.findIndex(cat=>{
+      let indCat = todos.findIndex(cat=>{
         //reducir la busqueda ya con la seccion actual en que esta
         return Object.keys(cat)[0] === section;
       });
       //El texto pasado es un elemento existente en la lista
       //encontrar el indice del objeto que coincida con el todo.text
-      const todoIndex = searchedTodos[indCat][section].findIndex(todo => todo.text === text);
+      const todoIndex = todos[indCat][section].findIndex(todo => todo.text === text);
       const newTodos = [...todos];
       newTodos[indCat][section].splice(todoIndex, 1);
+
+      //cuando no exista ningun item en la seccion la eliminamos
+      if(newTodos[indCat][section].length === 0){
+        newTodos.splice(indCat,1);
+      }
+
       saveTodos(newTodos);
     };
 
@@ -235,6 +294,7 @@ function TodoProvider(props){
       searchedTodosCat,
       completeTodo,
       deleteTodo,
+      editTodo,
       addTodo,
 
       openModalForm,
@@ -243,11 +303,18 @@ function TodoProvider(props){
       openModalReport,
       setOpenModalReport,
 
+      openModalPlot,
+      setOpenModalPlot,
+
       newBudgetValue,
       setNewBudgetValue,
 
       section, 
       setSection,
+
+      productDetails, 
+      setProductDetails,
+
     }}>
       {props.children}
     </TodoContext.Provider>

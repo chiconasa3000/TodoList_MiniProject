@@ -10,20 +10,24 @@
   transition: .3s ease;
 }
 
-.Icon-container--check{
-  position: absolute;
+/*.Icon-container--check{
+  position: relative;
   left:5px;
+}*/
+.Icon-container--edit{
+  position: relative;
+  top: 10px;
+  right: -12px;
 }
-
 .Icon-container--delete{
-  position: absolute;
-  top: -10px;
-  right:-15px;
+  position: relative;
+  top: -20px;
+  right:-35px;
 }
 
 .Icon-svg{
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   transition: fill .15s;
 }
 
@@ -33,4 +37,8 @@
 
 .Icon-container--check:hover{
   fill: #4caf50;
+}
+
+.Icon-container--edit:hover{
+  fill: #354f52;
 }

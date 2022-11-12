@@ -3,16 +3,17 @@ import { TodoContext } from '../TodoContext';
 import './TodoForm.css';
 import {TodoQuantity} from '../TodoQuantity';
 
-function TodoForm(){
-
-  const [newProductDescription, setProductDescription] = React.useState('');
-  const [newCategory, setCategory] = React.useState('');
-  const [newCantidadValue, setNewCantidadValue]=React.useState(0);
-  const [newPrecioValue, setNewPrecioValue]=React.useState(0.0);
+function TodoForm(props){
+  const [newProductDescription, setProductDescription] = React.useState(props.productDetails.description);
+  const [newCategory, setCategory] = React.useState(props.productDetails.category);
+  const [newCantidadValue, setNewCantidadValue]=React.useState(props.productDetails.quantity);
+  const [newPrecioValue, setNewPrecioValue]=React.useState(props.productDetails.uprice);
 
   const {
     addTodo,
+    editTodo,
     setOpenModalForm,
+    productDetails,
   } = React.useContext(TodoContext);
 
   const onChangeProducto = (event) => {
@@ -40,8 +41,13 @@ function TodoForm(){
     //recargar la pagina (avoid)
     //evitar la recarga de pagina del propio evento
     event.preventDefault();
-
-    addTodo(newCategory,newProductDescription,newCantidadValue,newPrecioValue);
+    if(productDetails.esEdit !== true){
+      console.log("addtodo");
+      addTodo(newCategory,newProductDescription,newCantidadValue,newPrecioValue);
+    }else{
+      console.log("edittodo");
+      editTodo(newCategory,newProductDescription,newCantidadValue,newPrecioValue);
+    }
     
     //cerrar con algo escrito en el modal
     setOpenModalForm(false);

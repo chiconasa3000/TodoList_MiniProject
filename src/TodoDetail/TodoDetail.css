@@ -9,6 +9,25 @@
   justify-content: space-between;
 }
 
+.itemcontainer{
+  display:flex;
+  align-items: center;
+}
+.containerGen--icon{
+  border: 1px gray dotted;
+  border-radius: 10px;
+  margin-top: 5px;
+  background-color: white;
+  height:85%;
+  width:10%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerGen--item{
+  width:100%;
+}
 /*Desktop and Tablet view*/
 @media only screen and (min-width:800px){
   .todoDetail{

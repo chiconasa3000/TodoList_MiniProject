@@ -5,6 +5,7 @@ import './TodoIcon.css';
 //import {ReactComponent as DeleteSVG} from './icons/delete2.svg';
 import {BsFillCheckCircleFill} from 'react-icons/bs';
 import {BsTrash} from 'react-icons/bs';
+import {BsPencilFill} from 'react-icons/bs';
 
 function TodoIcon({type, color, onClick}){
   const iconTypes = {
@@ -14,6 +15,9 @@ function TodoIcon({type, color, onClick}){
     "delete": color => (
       <BsTrash className='Icon-svg Icon-svg--delete' fill={color}/>
     ),
+    "edit": color => (
+      <BsPencilFill className='Icon-svg Icon-svg--edit' fill={color}/>
+    )
   };
 
   return(

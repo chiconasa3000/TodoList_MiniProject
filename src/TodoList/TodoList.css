@@ -2,16 +2,34 @@
 .TodoList{
     background-color: #efefef;
     width:100%;
+    height: 100%;
+    display: flex;
     align-items: center;
+    align-content: space-between;
     justify-content: center;
     overflow-y: scroll;
+    margin: 10px 0px;
 }
 
 .TodoList ul{
     display:flex;
     flex-direction: column;
-    height: 100%;
+    justify-content: space-between;
+    width:100%;
+    height: 90%;
     padding: 10px 50px;
+    padding-left:28px;
     margin: 0;
     list-style: none;
 }
+
+@media only screen and (min-height:1000px){
+    .TodoList{
+        height:60%;
+    }
+    .TodoList ul{
+        height:100%;
+    }
+}
+
+

@@ -12,6 +12,8 @@
   .TodoDash{
     display:flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -22,12 +24,13 @@
   justify-content: space-evenly;
   align-items: center;
   padding: 10px 0px;
+  width:100%;
+  height:45%;
 }
 
 .TodoDash h1{
   font-size: 2em;
   margin:0px 15px;
-  
 }
 .todoDashImg{
   margin:10px 10px;
@@ -56,7 +59,7 @@
   border: 1px black  solid;
   background-color: #d0d8d9;
   transform: rotate(0) scale(0.6);
-  transition: .9s ease;
+  transition: .3s ease;
 }
 
 .budget-report button:hover{
@@ -69,4 +72,13 @@
   width:2.5em;
 }
 
+@media only screen and (min-height:1100px){
+  .todoDashImg img{
+    width:260px;
+    height: 260px;
+  }   
+  .TodoDash h1{
+    font-size: 2.5em;
+  }
+}
 
