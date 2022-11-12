@@ -1,6 +1,10 @@
 # ToDo Shopping
 ##
-![todo list mobile](public/imagesLayouts/todomobile.png)
+<figure>
+  <img width="100px" src="public/imagesLayouts/todomobile.png" alt="Trulli" style="width:100%">
+  <figcaption>Shopping List application</figcaption>
+</figure>
+
 
 This project is a static page and consists of a shopping list, It could manage your shopping products when you are going to go to the mall or marketplace.
 
@@ -14,16 +18,25 @@ This project is a static page and consists of a shopping list, It could manage y
 - View a report of your budget with the expenses and balance.
 - View the progress of all your products
 - It has a mobile and desktop responsive view.
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><img src="public/imagesLayouts/dashlayout2.png" alt="drawing" width="200"/></td>
+    <td><img src="public/imagesLayouts/categories.png" alt="drawing" width="200"/></td>
+  </tr>
+  <tr>
+    <td><img src="public/imagesLayouts/reporttext.png" alt="drawing" width="200"/></td>
+    <td><img src="public/imagesLayouts/reportpie.png" alt="drawing" width="200"/></td>
+  </tr>
+</table>
 
-<img src="public/imagesLayouts/dashlayout2.png" alt="drawing" width="200"/>
-<img src="public/imagesLayouts/categories.png" alt="drawing" width="200"/>
-<br><br>
-<img src="public/imagesLayouts/reporttext.png" alt="drawing" width="200"/>
-<img src="public/imagesLayouts/reportpie.png" alt="drawing" width="200"/>
-<br><br>
 I made this project for learning the basics of React using React components, hooks, states, etc. It begins like a Todo List but It becomes in a shopping list I see that I need deep more in  the functionalities and know how to manage many components using other frameworks.
-<br><br>
+
 I hope you enjoy and be useful this application for you
+
 ## Available Scripts
 
 In the project directory, you can run:
