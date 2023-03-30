@@ -1,20 +1,13 @@
 import React from 'react';
-import { TodoContext } from '../TodoContext';
 import './TodoForm.css';
 import {TodoQuantity} from '../TodoQuantity';
 
-function TodoForm(props){
-  const [newProductDescription, setProductDescription] = React.useState(props.productDetails.description);
-  const [newCategory, setCategory] = React.useState(props.productDetails.category);
-  const [newCantidadValue, setNewCantidadValue]=React.useState(props.productDetails.quantity);
-  const [newPrecioValue, setNewPrecioValue]=React.useState(props.productDetails.uprice);
+function TodoForm({addTodo,editTodo,setOpenModalForm,productDetails}){
+  const [newProductDescription, setProductDescription] = React.useState(productDetails.description);
+  const [newCategory, setCategory] = React.useState(productDetails.category);
+  const [newCantidadValue, setNewCantidadValue]=React.useState(productDetails.quantity);
+  const [newPrecioValue, setNewPrecioValue]=React.useState(productDetails.uprice);
 
-  const {
-    addTodo,
-    editTodo,
-    setOpenModalForm,
-    productDetails,
-  } = React.useContext(TodoContext);
 
   const onChangeProducto = (event) => {
     setProductDescription(event.target.value);
@@ -44,7 +37,7 @@ function TodoForm(props){
     if(productDetails.esEdit !== true){
       addTodo(newCategory,newProductDescription,newCantidadValue,newPrecioValue);
     }else{
-      editTodo(props.productDetails.category,newCategory,props.productDetails.description,newProductDescription,newCantidadValue,newPrecioValue);
+      editTodo(productDetails.category,newCategory,productDetails.description,newProductDescription,newCantidadValue,newPrecioValue);
     }
     
     //cerrar con algo escrito en el modal
@@ -65,7 +58,7 @@ function TodoForm(props){
       <textarea id="prodDes"
         value={newProductDescription}
         onChange={onChangeProducto}
-        placeholder="Tomates"
+        placeholder="Tomatoes"
       />
       
 
@@ -74,8 +67,8 @@ function TodoForm(props){
         setItemCantValue={setNewCantidadValue} 
         onChange={onChangeCantidad} 
         label="Cantidad" 
-        esEntero={true} 
-        initialVal="0"
+        esEntero={false} 
+        initialVal="1.0"
       />
 
       <TodoQuantity 

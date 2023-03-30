@@ -11,6 +11,14 @@ import {TodosLoading} from '../TodosLoading';
 import {EmptyTodos} from '../EmptyTodos';
 import {TodosError} from '../TodosError';
 import {CompleteIcon} from '../TodoIcon/CompleteIcon';
+import {TodoCounter} from '../TodoCounter';
+import {TodoSearch} from '../TodoSearch';
+import {TodoCategory} from '../TodoCategory';
+import {TodoMarkDate} from '../TodoMarkDate';
+import {TodoProgress} from '../TodoProgress';
+
+
+
 function TodoDetail(){
   
   const {
@@ -23,6 +31,11 @@ function TodoDetail(){
     deleteTodo,
     setProductDetails,
     section,
+    totalTodos,
+    completedTodos,
+    searchValue,
+    setSearchValue,
+    setSection,
   } = React.useContext(TodoContext);
 
   const onEditDetail = (mysection, text, cant, price)=>{
@@ -40,15 +53,40 @@ function TodoDetail(){
   return(
     <React.Fragment>
       <div className='todoDetail'>
-        <TodoCabecera/>
+
+        <TodoCabecera>
+          <section className='CabeceraMain'>
+            <section className="firstHead">
+              <TodoCategory/>
+            </section>
+            <section className='secondHead'>
+              <TodoMarkDate/>
+              <TodoCounter
+                totalTodos={totalTodos}
+                completedTodos={completedTodos}
+              />
+            </section>
+          </section>
+          <TodoProgress
+            totalTodos={totalTodos}
+            completedTodos={completedTodos}
+          />
+          <TodoSearch
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
+        </TodoCabecera>
+
         <TodoSection>
           {searchedTodos.map(todo =>(
             <TodoSectionItem
+              setSection={setSection}
               key={Object.keys(todo)[0]}
               title = {Object.keys(todo)[0]}
             />            
           ))}
         </TodoSection>
+
         <TodoList>
           {error && <TodosError error={error}/>}
           {loading && <TodosLoading/>}
@@ -79,6 +117,7 @@ function TodoDetail(){
         
         
         <CreateTodoButton
+          setProductDetails={setProductDetails}
           setOpenModal={setOpenModalForm}
         />
       </div>

@@ -1,10 +1,8 @@
 import React from 'react';
-import { TodoContext } from '../TodoContext';
 import './TodoSectionItem.css';
 
-function TodoSectionItem(props){
+function TodoSectionItem({setSection,title}){
 
-  const {setSection} = React.useContext(TodoContext);
 
   const onClick = (event)=>{
     setSection(event.target.innerText);
@@ -12,7 +10,7 @@ function TodoSectionItem(props){
 
   return(
     <div>
-      <li onClick={onClick} className='todosectionitem'>{props.title}</li>
+      <li onClick={onClick} className='todosectionitem'>{title}</li>
     </div>
   );
 }

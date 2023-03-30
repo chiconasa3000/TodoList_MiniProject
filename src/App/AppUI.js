@@ -13,11 +13,14 @@ import './App.css'
 function AppUI(){
 
   const {
+    addTodo,
+    editTodo,
     openModalForm,
     openModalReport,
     openModalPlot,
     setOpenModalReport,
     setOpenModalPlot,
+    setOpenModalForm,
     productDetails,
     } = React.useContext(TodoContext);
   
@@ -52,7 +55,12 @@ function AppUI(){
 
       {!!openModalForm && (
         <Modal>
-          <TodoForm productDetails={productDetails}></TodoForm>
+          <TodoForm
+            addTodo={addTodo}
+            editTodo={editTodo}
+            setOpenModalForm={setOpenModalForm}
+            productDetails={productDetails}
+          />
         </Modal>
       )}
 

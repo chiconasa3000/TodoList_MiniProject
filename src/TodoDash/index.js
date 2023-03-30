@@ -1,14 +1,9 @@
 import React from 'react'
 import './TodoDash.css';
-
-/*import todoDashImgMobile from '../images/glenn-carstens-peters-RLw-UC03Gwc-unsplash_small.jpg';
-import todoDashImgMedium from '../images/glenn-carstens-peters-RLw-UC03Gwc-unsplash_medium.jpg';
-import todoDashImgLarge from '../images/glenn-carstens-peters-RLw-UC03Gwc-unsplash_large.jpg';*/
-import todoDashImgMobile from '../images/main_picture_shopping.png';
-import {FiPieChart} from 'react-icons/fi';
-//import {TodoBudget} from '../TodoBudget';
-import { TodoContext } from '../TodoContext';
 import {TodoPlot} from '../TodoPlot';
+import todoDashImgMobile from '../images/main_picture_shopping.png';
+
+
 function TodoDash(props){
   return(
     <React.Fragment>
@@ -22,8 +17,6 @@ function TodoDash(props){
           </picture>
         </div>
         <TodoPlot esModal={false}/>
-        
-        
       </div>
     </React.Fragment>
   )

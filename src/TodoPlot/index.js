@@ -7,7 +7,9 @@ import './TodoPlot.css';
 import Plot from 'react-plotly.js';
 
 function TodoPlot(props){
+
   const {setOpenModalPlot,totalExpenses,newBudgetValue,setNewBudgetValue} = React.useContext(TodoContext);
+
   const balance = newBudgetValue - totalExpenses;
   const ultimateColors = ['rgb(33, 75, 99)', 'rgb(79, 129, 102)', 'rgb(151, 179, 100)', 'rgb(175, 49, 35)', 'rgb(36, 73, 147)']
   const initialData = [

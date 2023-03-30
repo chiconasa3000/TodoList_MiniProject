@@ -1,9 +1,7 @@
 import React from 'react'
-import { TodoContext } from '../TodoContext';
 import './TodoProgress.css'
 
-function TodoProgress(){
-  const { totalTodos, completedTodos } = React.useContext(TodoContext);
+function TodoProgress({ totalTodos, completedTodos }){
   let currentProgress = 0;
   if(totalTodos !== 0)
     currentProgress = (completedTodos/totalTodos*100).toFixed(1);

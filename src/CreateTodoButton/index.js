@@ -1,9 +1,7 @@
 import React from 'react';
-import { TodoContext } from '../TodoContext';
 import './CreateTodoButton.css';
 
-function CreateTodoButton({setOpenModal}) {
-    const {setProductDetails} = React.useContext(TodoContext); 
+function CreateTodoButton({setProductDetails,setOpenModal}) {
     /*Si pasas parametros doble arrow function*/
     const onClickButton = () => {
         //recibe una arrow function 
