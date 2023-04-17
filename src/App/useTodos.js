@@ -1,8 +1,8 @@
 import React from 'react'
 import {useLocalStorage} from './useLocalStorage.js';
-const TodoContext = React.createContext();
 
-function TodoProvider(props){
+
+function useTodos(){
     //Estado del arreglo de elemento
     const {
       item: todos,
@@ -206,8 +206,29 @@ function TodoProvider(props){
       saveTodos(newTodos);
     };
 
-  return (
-    <TodoContext.Provider value={{
+    /* TodoDetail */
+    const onEditDetail = (mysection, text, cant, price)=>{
+      setOpenModalForm(current=>!current);
+      let prodDet = {
+        esEdit: true,
+        category: mysection,
+        description: text,
+        quantity: cant,
+        uprice: price,
+      };
+      setProductDetails(prodDet);
+    }
+
+    const onClickButtonDash = () =>{
+      setOpenModalReport(current => !current);
+    };
+  
+    const onClickButtonPlot = () =>{
+      setOpenModalPlot(current => !current);
+    };
+  
+
+  return{
       loading,
       error,
       totalTodos,
@@ -221,6 +242,7 @@ function TodoProvider(props){
       searchedTodosCat,
       completeTodo,
       deleteTodo,
+      onEditDetail,
       editTodo,
       addTodo,
 
@@ -242,9 +264,9 @@ function TodoProvider(props){
       productDetails, 
       setProductDetails,
 
-    }}>
-      {props.children}
-    </TodoContext.Provider>
-  );
+      onClickButtonDash,
+      onClickButtonPlot,
+
+    }
 }
-export {TodoContext, TodoProvider};
+export {useTodos};
