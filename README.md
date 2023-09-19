@@ -37,6 +37,8 @@ I made this project for learning the basics of React using React components, hoo
 
 I hope you enjoy and be useful this application for you
 
+[Take a look at the project] (https://chiconasa3000.github.io/TodoList_MiniProject/)
+
 ## Available Scripts
 
 In the project directory, you can run:
